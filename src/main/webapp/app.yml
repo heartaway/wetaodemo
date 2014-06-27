@@ -1,0 +1,22 @@
+# 安全和权限配置
+# url:需要授权的URL，凡是url配置起始的请求URL均需要相应的权限
+#     例如配置：- {url: /admin,role: developer}
+#     以下请求URL: /admin/abc和/admin/bcd 均需要developer权限
+
+# role:对应的权限控制
+
+# 其中权限类型如下：
+#           anonymous：匿名权限
+#           sitecustomer：登录用户权限
+#           developer：开发者权限
+
+# 特别提醒：线下SDK开发时，当请求URL权限不够时，将会跳至线下登录表单页面（线上容器不存在的）
+security:
+- {url: /views/sso/anonymous.jsp,role: anonymous}
+- {url: /views/sso/sitecustomer.jsp,role: sitecustomer}
+- {url: /views/oauth/index.jsp,role: sitecustomer}
+#- {url: /views/jsapi/3.0/gps/index.jsp,role: sitecustomer}
+- {url: /admin/,role: developer}
+- {url: /views/sso/developer.jsp,role: developer}
+- {url: /views/security,role: developer}
+

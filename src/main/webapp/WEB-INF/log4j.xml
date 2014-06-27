@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="PROJECT" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${loggingRoot}/juappcenter_startup.log"/>
+        <param name="encoding" value="gbk"/>
+        <param name="append" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] - [%t] %X{method}  %5p %c{1}:%L - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="APPCENTER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${loggingRoot}/jaeweitaodemo.log"/>
+        <param name="encoding" value="utf-8"/>
+        <param name="append" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] - [%t] %X{method}  %5p %c{1}:%L - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="com.taobao.diamond" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="diamondLog"/>
+    </logger>
+
+    <logger name="com.alibaba.dubbo" additivity="false">
+        <level value="WARN"/>
+        <appender-ref ref="dubboLog"/>
+    </logger>
+
+    <logger name="STDERR" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="STDERR"/>
+    </logger>
+
+    <logger name="com.taobao.juae" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="APPCENTER"/>
+    </logger>
+
+    <logger name="org.apache.commons.httpclient" additivity="false">
+        <level value="WARN"/>
+    </logger>
+
+    <root>
+        <level value="WARN"/>
+        <appender-ref ref="PROJECT"/>
+    </root>
+</log4j:configuration>

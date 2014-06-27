@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+    <TITLE>JAE微淘测试</TITLE>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--basic styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <!--page specific plugin styles-->
+    <!--ace styles-->
+    <link rel="stylesheet" href="assets/css/ace.m.min.css"/>
+
+    <!--inline styles related to this page-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</HEAD>
+<BODY>
+<div class="main-container container-fluid" style="width:320px;margin:0 auto;">
+    <div class="sidebar" id="sidebar">
+
+        <ul class="nav nav-list">
+            <li>
+                <a href="views/jaewebview/index.jsp">
+                    <i class="icon-dashboard"></i>
+                    <span class="menu-text"> JAE WebView </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="views/jsapi/index.jsp">
+                    <i class="icon-dashboard"></i>
+                    <span class="menu-text">Js API</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="views/sso/index.jsp">
+                    <i class="icon-dashboard"></i>
+                    <span class="menu-text">Jae SSO Proxy </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="views/security/index.jsp">
+                    <i class="icon-dashboard"></i>
+                    <span class="menu-text">安全测试</span>
+                </a>
+            </li>
+
+        </ul>
+        <!--/.nav-list-->
+    </div>
+    <!--/.sidebar-->
+
+<div class="alert alert-info">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    当前环境：<span class="getCurrentWebviewEnvrionment"></span>
+    <button class="btn btn-small btn-success" onclick="getCurrentWebviewEnvrionment()">
+        获取
+    </button>
+</div>
+
+</div>
+</BODY>
+</HTML>
+
+<!--sys scripts-->
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
+
+<script type="text/javascript" src="assets/js/usr/jaedemocommon.js"></script>
+<!-- 日常 JS -->
+<!--<script src="http://g.assets.daily.taobao.net/mtb/lib-windvane/1.2.3/bridge.js?v=2"></script>-->
+<!--<script type="text/javascript" src="http://g.assets.daily.taobao.net/mtb/lib-windvane/1.2.3/api.debug.js"></script>-->
+
+<!-- 预发 JS -->
+<script src="http://g.tbcdn.cn/mtb/lib-windvane/1.2.4/bridge.js"></script>
+<script type="text/javascript" src="http://g.tbcdn.cn/mtb/lib-windvane/1.2.4/api.js"></script>
